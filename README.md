@@ -1,3 +1,11 @@
+### Prerequisites
+
+This project uses [Pipenv][pipenv] to manage project dependencies.
+
+If you would you like to forgo the use of Pipenv, ensure that you're using Python 3 and that the `pymysql` module is available.
+
+[pipenv]: https://docs.pipenv.org/
+
 ### Example Usage
 
 ```

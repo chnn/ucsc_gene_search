@@ -55,9 +55,9 @@ def get_search_result_selection(results):
     return selection
 
 
-def get_gene_data(selection):
+def get_gene_data(known_gene_id):
     with connection.cursor() as cursor:
-        cursor.execute(GENE_BY_ID_SQL.format(selection['kgID']))
+        cursor.execute(GENE_BY_ID_SQL.format(known_gene_id))
         gene_data = cursor.fetchone()
 
         return gene_data
@@ -111,7 +111,7 @@ if __name__ == '__main__':
             sys.exit(0)
 
         selection = get_search_result_selection(search_results)
-        gene_data = get_gene_data(selection)
+        gene_data = get_gene_data(selection['kgID'])
 
         print("Gene data:\n")
 
